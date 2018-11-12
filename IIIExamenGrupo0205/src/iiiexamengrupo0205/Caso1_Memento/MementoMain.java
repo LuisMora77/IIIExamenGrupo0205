@@ -490,19 +490,96 @@ public class MementoMain {
                         }
                         break;
                     case 6:
-                        System.out.println("");
+                        System.out.println("Ha seleccionado la opcion de raiz cuadrada");
+                        System.out.println("Introduzca la variable en la que desea guardar el resultado (x,y,z).");
+                        String variable6 = scan.nextLine();
+                        variable6 = scan.nextLine();
+                        System.out.println("Digite el numero al que le desea sacar raiz cuadrada (puede ser otra variable de las descritas anteriormente)");
+                        String valor6 = scan.nextLine();
+                        switch (variable6){
+                            case "x":
+                                switch(valor6){
+                                    case "x":
+                                        origin.setX(Math.sqrt(origin.getX()));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        origin.setX(Math.sqrt(origin.getY()));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        origin.setX(Math.sqrt(origin.getZ()));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        origin.setX(Math.sqrt(Double.parseDouble(valor6)));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                            
+                            case "y":
+                                switch(valor6){
+                                    case "x":
+                                        origin.setY(Math.sqrt(origin.getX()));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        origin.setY(Math.sqrt(origin.getY()));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        origin.setY(Math.sqrt(origin.getZ()));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        origin.setY(Math.sqrt(Double.parseDouble(valor6)));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                            
+                            case "z":
+                                switch(valor6){
+                                    case "x":
+                                        origin.setZ(Math.sqrt(origin.getX()));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        origin.setZ(Math.sqrt(origin.getY()));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        origin.setZ(Math.sqrt(origin.getZ()));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        origin.setZ(Math.sqrt(Double.parseDouble(valor6)));
+                                        System.out.println("Raiz cuadrada calculada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                        }
                         break;
                     case 7:
-                        System.out.println("");
+                        origin.generarSavepoint();
                         break;
                     case 8:
-                        System.out.println("");
+                        origin.deshacerUnPaso();
                         break;
                     case 9:
-                        System.out.println("");
+                        System.out.println("Digite el numero de SAVEPOINT al que desea regresar:");
+                        int savepoint = scan.nextInt();
+                        origin.deshacerARequerido(savepoint);
                         break;
                     case 10:
-                        System.out.println("");
+                        origin.deshacerTodo();
                         break;
                     case 11:
                         System.out.println("Gracias por utilizar la calculadora. Hasta pronto.");

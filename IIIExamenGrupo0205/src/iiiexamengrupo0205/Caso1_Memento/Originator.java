@@ -51,9 +51,9 @@ public class Originator {
     }
     
     public Originator(Caretaker caretaker) {
-        this.x = 10;
-        this.y = 10;
-        this.z = 10;
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
         this.contador = 1;
         this.calcuCaretaker = caretaker;
         System.out.println("Calculadora iniciada, valores iniciales de las variables x, y, z = " + getX() + ", " + getY() +", " + getZ() + " respectivamente");
@@ -65,7 +65,7 @@ public class Originator {
     System.out.println("\nFuncion generarSavepoint:");
     System.out.println("Generando el savepoint numero " + getContador() + " con el estado actual de la calculadora...");
     calcuCaretaker.addMemento(new CalcuMemento(getX(),getY(),getZ(),getContador()));
-    System.out.println("SAVEPOINT " + getContador() + valoresActuales());
+    System.out.println("SAVEPOINT " + getContador() + " " + valoresActuales());
     ultimoSavePoint = contador;
     contador++;
     }
@@ -85,7 +85,7 @@ public class Originator {
         this.x = pasoAnterior.getX();
         this.y = pasoAnterior.getY();
         this.z = pasoAnterior.getZ();
-        System.out.println("Pasos revertidos con exito" + valoresActuales());
+        System.out.println("Pasos revertidos con exito " + valoresActuales());
             }
         }
     
@@ -93,11 +93,19 @@ public class Originator {
     public void deshacerARequerido(int savepoint){ // Revierte al SAVEPOINT que el usuario desee
         System.out.println("\nFuncion deshacerARequerido:");
         System.out.println("Deshaciendo operaciones hasta el SAVEPOINT numero " + (savepoint) + "...");
+        if (calcuCaretaker.mementos.size() == 0){
+            System.out.println("No hay SAVEPOINTS guardados aun. No es posible devolverse.");
+        }
+        else if( savepoint > calcuCaretaker.mementos.size()){
+            System.out.println("El numero de SAVEPOINT ingresado no es valido, por el momento hay " + calcuCaretaker.mementos.size() + " SAVEPOINTS registrados");
+        }
+        else{
         CalcuMemento pasoRequerido = calcuCaretaker.getMemento(savepoint-1); // savepoint-1 ya que para el usuario el SAVEPOINT 1 viene siendo el indice 0 del array.
         this.x = pasoRequerido.getX();
         this.y = pasoRequerido.getY();
         this.z = pasoRequerido.getZ();
-        System.out.println("Pasos revertidos con exito" + valoresActuales());
+        System.out.println("Pasos revertidos con exito " + valoresActuales());
+        }
     }
     
     public void deshacerTodo(){ // Vuelve 0 todos los valores de las variables, sin tocar el contador.
