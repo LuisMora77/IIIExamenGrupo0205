@@ -334,7 +334,82 @@ public class MementoMain {
                         }
                         break;
                     case 4:
-                        System.out.println("");
+                        System.out.println("Ha seleccionado la opcion de division");
+                        System.out.println("Introduzca la variable en la que desea guardar el resultado (x,y,z).");
+                        String variable4 = scan.nextLine();
+                        variable4 = scan.nextLine();
+                        System.out.println("Digite el numero que desea restarle a la variable " + variable4 + " (puede ser otra variable de las descritas anteriormente)");
+                        String valor4 = scan.nextLine();
+                        switch (variable4){
+                            case "x":
+                                switch(valor4){
+                                    case "x":
+                                        origin.setX(origin.getX() / origin.getX());
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        origin.setX(origin.getX() / origin.getY());
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        origin.setX(origin.getX() / origin.getZ());
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        origin.setX(origin.getX() / Double.parseDouble(valor4));
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                            
+                            case "y":
+                                switch(valor4){
+                                    case "x":
+                                        origin.setY(origin.getY() / origin.getX());
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        origin.setY(origin.getY() / origin.getY());
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        origin.setY(origin.getY() / origin.getZ());
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        origin.setY(origin.getY() / Double.parseDouble(valor4));
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                            
+                            case "z":
+                                switch(valor4){
+                                    case "x":
+                                        origin.setZ(origin.getZ() / origin.getX());
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        origin.setZ(origin.getZ() / origin.getY());
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        origin.setZ(origin.getZ() / origin.getZ());
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        origin.setZ(origin.getZ() / Double.parseDouble(valor4));
+                                        System.out.println("Division realizada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                        }
                         break;
                     case 5:
                         System.out.println("");
