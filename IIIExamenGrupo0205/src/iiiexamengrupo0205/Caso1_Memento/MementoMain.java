@@ -260,7 +260,7 @@ public class MementoMain {
                         System.out.println("Introduzca la variable en la que desea guardar el resultado (x,y,z).");
                         String variable3 = scan.nextLine();
                         variable3 = scan.nextLine();
-                        System.out.println("Digite el numero que desea restarle a la variable " + variable3 + " (puede ser otra variable de las descritas anteriormente)");
+                        System.out.println("Digite el numero que desea multiplicarle a la variable " + variable3 + " (puede ser otra variable de las descritas anteriormente)");
                         String valor3 = scan.nextLine();
                         switch (variable3){
                             case "x":
@@ -338,7 +338,7 @@ public class MementoMain {
                         System.out.println("Introduzca la variable en la que desea guardar el resultado (x,y,z).");
                         String variable4 = scan.nextLine();
                         variable4 = scan.nextLine();
-                        System.out.println("Digite el numero que desea restarle a la variable " + variable4 + " (puede ser otra variable de las descritas anteriormente)");
+                        System.out.println("Digite el numero qpor el que desea dividir la variable " + variable4 + " (puede ser otra variable de las descritas anteriormente)");
                         String valor4 = scan.nextLine();
                         switch (variable4){
                             case "x":
@@ -412,7 +412,82 @@ public class MementoMain {
                         }
                         break;
                     case 5:
-                        System.out.println("");
+                        System.out.println("Ha seleccionado la opcion de potenciacion");
+                        System.out.println("Introduzca la variable en la que desea guardar el resultado (x,y,z).");
+                        String variable5 = scan.nextLine();
+                        variable5 = scan.nextLine();
+                        System.out.println("Digite el numero por el que desea potenciar la variable " + variable5 + " (puede ser otra variable de las descritas anteriormente)");
+                        String valor5 = scan.nextLine();
+                        switch (variable5){
+                            case "x":
+                                switch(valor5){
+                                    case "x":
+                                        origin.setX(Math.pow(origin.getX(), origin.getX()));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        origin.setX(Math.pow(origin.getX(), origin.getY()));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        origin.setX(Math.pow(origin.getX(), origin.getZ()));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        origin.setX(Math.pow(origin.getX(), Double.parseDouble(valor5)));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                            
+                            case "y":
+                                switch(valor5){
+                                    case "x":
+                                        origin.setY(Math.pow(origin.getY(), origin.getX()));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        origin.setY(Math.pow(origin.getY(), origin.getY()));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        origin.setY(Math.pow(origin.getY(), origin.getZ()));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        origin.setY(Math.pow(origin.getY(), Double.parseDouble(valor5)));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                            
+                            case "z":
+                                switch(valor5){
+                                    case "x":
+                                        origin.setZ(Math.pow(origin.getZ(), origin.getX()));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        origin.setZ(Math.pow(origin.getZ(), origin.getY()));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        origin.setZ(Math.pow(origin.getZ(), origin.getZ()));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        origin.setZ(Math.pow(origin.getZ(), Double.parseDouble(valor5)));
+                                        System.out.println("Potenciacion realizada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                        }
                         break;
                     case 6:
                         System.out.println("");
@@ -430,6 +505,7 @@ public class MementoMain {
                         System.out.println("");
                         break;
                     case 11:
+                        System.out.println("Gracias por utilizar la calculadora. Hasta pronto.");
                         terminado = true;
                         break;
                     default:
