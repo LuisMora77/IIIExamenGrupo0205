@@ -87,10 +87,10 @@ public class MementoMain {
            System.out.println("4. Dividir");
            System.out.println("5. Potenciar");
            System.out.println("6. Sacar raiz cuadrada");
-           System.out.println("7. Sacar raiz cuadrada");
-           System.out.println("8. Sacar raiz cuadrada");
-           System.out.println("9. Sacar raiz cuadrada");
-           System.out.println("10. Sacar raiz cuadrada");
+           System.out.println("7. Generar SAVEPOINT");
+           System.out.println("8. Deshacer un paso");
+           System.out.println("9. Deshacer a paso requerido");
+           System.out.println("10. Deshacer todo");
            System.out.println("11. Salir");
            
            try{
@@ -113,25 +113,25 @@ public class MementoMain {
                                     case "x":
                                         System.out.println("entre al valor x del segundo switch");
                                         origin.setX(origin.getX() + origin.getX());
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                     break;
                                     
                                     case "y":
                                         System.out.println("entre al valor y del segundo switch");
                                         origin.setX(origin.getX() + origin.getY());
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                     break;
                                     
                                     case "z":
                                         System.out.println("entre al valor z del segundo switch");
                                         origin.setX(origin.getX() + origin.getZ());
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                     break;
                                     
                                     default:
                                         System.out.println("entre al default del segundo switch");
                                         origin.setX(origin.getX() + Double.parseDouble(valor));
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                 }
                             break;
                             
@@ -140,25 +140,25 @@ public class MementoMain {
                                     case "x":
                                         System.out.println("entre al valor x del segundo switch");
                                         origin.setY(origin.getY() + origin.getX());
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                     break;
                                     
                                     case "y":
                                         System.out.println("entre al valor y del segundo switch");
                                         origin.setY(origin.getY() + origin.getY());
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                     break;
                                     
                                     case "z":
                                         System.out.println("entre al valor z del segundo switch");
                                         origin.setY(origin.getY() + origin.getZ());
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                     break;
                                     
                                     default:
                                         System.out.println("entre al default del segundo switch");
                                         origin.setY(origin.getY() + Double.parseDouble(valor));
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                 }
                             break;
                             
@@ -167,32 +167,121 @@ public class MementoMain {
                                     case "x":
                                         System.out.println("entre al valor x del segundo switch");
                                         origin.setZ(origin.getZ() + origin.getX());
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                     break;
                                     
                                     case "y":
                                         System.out.println("entre al valor y del segundo switch");
                                         origin.setZ(origin.getZ() + origin.getY());
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                     break;
                                     
                                     case "z":
                                         System.out.println("entre al valor z del segundo switch");
                                         origin.setZ(origin.getZ() + origin.getZ());
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                     break;
                                     
                                     default:
                                         System.out.println("entre al default del segundo switch");
                                         origin.setZ(origin.getZ() + Double.parseDouble(valor));
-                                        System.out.println(origin.valoresActuales());
+                                        System.out.println("Suma realizada con exito " + origin.valoresActuales());
                                 }
                             break;
                         }
                         break;
                         
                     case 2:
-                        System.out.println("Has seleccionado la opcion 2");
+                        System.out.println("Ha seleccionado la opcion de restar");
+                        System.out.println("Introduzca la variable en la que desea guardar el resultado (x,y,z).");
+                        String variable2 = scan.nextLine();
+                        variable2 = scan.nextLine();
+                        System.out.println("variable es " + variable2);
+                        System.out.println("Digite el numero que desea restarle a la variable " + variable2 + " (puede ser otra variable de las descritas anteriormente)");
+                        String valor2 = scan.nextLine();
+                        System.out.println(valor2);
+                        switch (variable2){
+                            case "x":
+                                switch(valor2){
+                                    case "x":
+                                        System.out.println("entre al valor x del segundo switch");
+                                        origin.setX(origin.getX() - origin.getX());
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        System.out.println("entre al valor y del segundo switch");
+                                        origin.setX(origin.getX() - origin.getY());
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        System.out.println("entre al valor z del segundo switch");
+                                        origin.setX(origin.getX() - origin.getZ());
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        System.out.println("entre al default del segundo switch");
+                                        origin.setX(origin.getX() - Double.parseDouble(valor2));
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                            
+                            case "y":
+                                switch(valor2){
+                                    case "x":
+                                        System.out.println("entre al valor x del segundo switch");
+                                        origin.setY(origin.getY() - origin.getX());
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        System.out.println("entre al valor y del segundo switch");
+                                        origin.setY(origin.getY() - origin.getY());
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        System.out.println("entre al valor z del segundo switch");
+                                        origin.setY(origin.getY() - origin.getZ());
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        System.out.println("entre al default del segundo switch");
+                                        origin.setY(origin.getY() - Double.parseDouble(valor2));
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                            
+                            case "z":
+                                switch(valor2){
+                                    case "x":
+                                        System.out.println("entre al valor x del segundo switch");
+                                        origin.setZ(origin.getZ() - origin.getX());
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        System.out.println("entre al valor y del segundo switch");
+                                        origin.setZ(origin.getZ() - origin.getY());
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        System.out.println("entre al valor z del segundo switch");
+                                        origin.setZ(origin.getZ() - origin.getZ());
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        System.out.println("entre al default del segundo switch");
+                                        origin.setZ(origin.getZ() - Double.parseDouble(valor2));
+                                        System.out.println("Resta realizada con exito " + origin.valoresActuales());
+                                }
+                            break;
+                        }
                         break;
                     case 3:
                         System.out.println("Has seleccionado la opcion 3");
