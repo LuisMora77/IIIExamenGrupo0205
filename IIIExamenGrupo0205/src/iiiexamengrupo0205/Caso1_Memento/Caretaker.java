@@ -14,14 +14,14 @@ import java.util.List;
  */
 public class Caretaker {
     
-    final List<CalcuMemento> mementos = new ArrayList<CalcuMemento>();
+    public List<CalcuMemento> mementos = new ArrayList<CalcuMemento>();
     
     public CalcuMemento getMemento(int index) //  este obtiene los mementos segun un indice
     {
         return mementos.get(index);
     }
     
-    public void addMemento(CalcuMemento memento)
+    public void addMemento(CalcuMemento memento) // agrega un savepoint a la lista de savepoints guardados
     {
         mementos.add(memento);
     }

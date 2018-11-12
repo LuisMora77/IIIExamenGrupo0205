@@ -15,7 +15,7 @@ public class Originator {
     private double y;
     private double z;
     Caretaker calcuCaretaker;
-    private int contador;
+    private int contador; // Este contador almacena el numero de savepoints que ha registrado el sistema. Se inicializa en 1.
 
     public void setX(double x) {
         this.x = x;
@@ -49,27 +49,63 @@ public class Originator {
         return contador;
     }
     
-    public Originator(double x, double y, double z, Caretaker calcuCaretaker) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.calcuCaretaker = calcuCaretaker;
+    public Originator(Caretaker caretaker) {
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+        this.contador = 1;
+        this.calcuCaretaker = caretaker;
+        System.out.println("Calculadora iniciada, valores iniciales de las variables x, y, z = " + getX() + ", " + getY() +", " + getZ() + " respectivamente");
     }
     
     
-    public void deshacerTodo(){ // borra todos los mementos almacenados 
-    calcuCaretaker.mementos.clear();
-    System.out.println("Se han eliminado todos los SAVEPOINTS del sistema");
-    }
-    
-    public void deshacerUnPaso(){
-    
-    }
     
     public void generarSavepoint(){ // Guarda en la lista del caretaker una "foto" del estado actual de la calcu.
-    calcuCaretaker.addMemento(new CalcuMemento(this.x,this.y,this.z, this.contador ));
-    System.out.println("Guardado el estado actual de la calculadora ");
-    
+    System.out.println("\nFuncion generarSavepoint:");
+    System.out.println("Generando el savepoint numero " + getContador() + " con el estado actual de la calculadora...");
+    calcuCaretaker.addMemento(new CalcuMemento(getX(),getY(),getZ(),getContador()));
+    System.out.println("SAVEPOINT " + getContador() + " guardado con exito, valores de x, y, z guardados = " + getX() + ", " + getY() +", " + getZ() + " respectivamente");
+    contador++;
     }
+    
+    
+    public void deshacerUnPaso(){ //  Revierte el estado de la calculadora al estado anterior
+        System.out.println("\nFuncion deshacerUnPaso:");
+        System.out.println("Revirtiendo calculadora a estado anterior...");
+        CalcuMemento pasoAnterior = calcuCaretaker.getMemento(contador-3);//-3 ya que en la lista de mementos el indice inicia en 0.
+        this.x = pasoAnterior.getX();
+        this.y = pasoAnterior.getY();
+        this.z = pasoAnterior.getZ();
+        System.out.println("Paso revertido con exito, valores actuales de variables x, y, z = " + getX() + ", " + getY() +", " + getZ() + " respectivamente");
+    }
+    
+    
+    public void deshacerARequerido(int indice){ // Revierte hasta el calculo que el usuario desee mediante un indice
+        System.out.println("\nFuncion deshacerARequerido:");
+        System.out.println("Deshaciendo operaciones hasta el SAVEPOINT numero " + (indice+1) + "...");
+        CalcuMemento pasoRequerido = calcuCaretaker.getMemento(indice);
+        this.x = pasoRequerido.getX();
+        this.y = pasoRequerido.getY();
+        this.z = pasoRequerido.getZ();
+        System.out.println("Pasos revertidos con exito, valores actuales de variables x, y, z = " + getX() + ", " + getY() +", " + getZ() + " respectivamente"  );
+    }
+    
+    public void deshacerTodo(){ // Vuelve 0 todos los valores de las variables, sin tocar el contador.
+    System.out.println("\nFuncion deshacerTodo:");
+    System.out.println("Deshaciendo todos los calculos realizados...");
+    this.x = 0;
+    this.y = 0;
+    this.z = 0;
+    System.out.println("Valores actuales de x, y, z = " + getX() + ", " + getY() +", " + getZ() + " respectivamente" );
+    }
+    
+    public void valoresActuales(){
+        System.out.println("Valores actuales de x, y, z = " + getX() + ", " + getY() +", " + getZ() + " respectivamente");
+    }
+    
+    
+    
+    
+    
     
 }
