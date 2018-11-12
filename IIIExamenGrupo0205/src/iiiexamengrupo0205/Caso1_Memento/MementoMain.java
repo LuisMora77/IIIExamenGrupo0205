@@ -133,64 +133,64 @@ public class MementoMain {
                                         origin.setX(origin.getX() + Double.parseDouble(valor));
                                         System.out.println(origin.valoresActuales());
                                 }
-                        }
-                        
-                        if(variable == "x"){
-                            if (valor == "x"){
-                                System.out.println("entre al valor x");
-                                origin.setX(origin.getX() + origin.getX());
-                                origin.valoresActuales();
-                            }
-                            else if(valor == "y"){
-                            origin.setX(origin.getX() + origin.getY());
-                            origin.valoresActuales();
-                            }
-                            else if (valor == "z"){
-                            origin.setX(origin.getX() + origin.getZ());
-                            origin.valoresActuales();
-                            }
+                            break;
                             
-                        else{    
-                                System.out.println("entre al else");
-                        origin.setX(origin.getX() + Double.parseDouble(valor));
-                        origin.valoresActuales();
+                            case "y":
+                                switch(valor){
+                                    case "x":
+                                        System.out.println("entre al valor x del segundo switch");
+                                        origin.setY(origin.getY() + origin.getX());
+                                        System.out.println(origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        System.out.println("entre al valor y del segundo switch");
+                                        origin.setY(origin.getY() + origin.getY());
+                                        System.out.println(origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        System.out.println("entre al valor z del segundo switch");
+                                        origin.setY(origin.getY() + origin.getZ());
+                                        System.out.println(origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        System.out.println("entre al default del segundo switch");
+                                        origin.setY(origin.getY() + Double.parseDouble(valor));
+                                        System.out.println(origin.valoresActuales());
                                 }
-                        }
-                        
-                        else if(variable == "y"){
-                            if (valor == "x"){
-                                origin.setY(origin.getY() + origin.getX());
-                            }
-                            else if(valor == "y"){
-                            origin.setY(origin.getY() + origin.getY());
-                            }
-                            else if (valor == "z"){
-                            origin.setY(origin.getY() + origin.getZ());
-                            }
+                            break;
                             
-                        else{    
-                        origin.setY(origin.getY() + Double.parseDouble(valor));
-                        origin.valoresActuales();
+                            case "z":
+                                switch(valor){
+                                    case "x":
+                                        System.out.println("entre al valor x del segundo switch");
+                                        origin.setZ(origin.getZ() + origin.getX());
+                                        System.out.println(origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        System.out.println("entre al valor y del segundo switch");
+                                        origin.setZ(origin.getZ() + origin.getY());
+                                        System.out.println(origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        System.out.println("entre al valor z del segundo switch");
+                                        origin.setZ(origin.getZ() + origin.getZ());
+                                        System.out.println(origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        System.out.println("entre al default del segundo switch");
+                                        origin.setZ(origin.getZ() + Double.parseDouble(valor));
+                                        System.out.println(origin.valoresActuales());
                                 }
-                        }
-                        
-                        else if(variable == "z"){
-                            if (valor == "x"){
-                                origin.setZ(origin.getZ() + origin.getX());
-                            }
-                            else if(valor == "y"){
-                            origin.setZ(origin.getZ() + origin.getY());
-                            }
-                            else if (valor == "z"){
-                            origin.setZ(origin.getZ() + origin.getZ());
-                            }
-                            
-                        else{    
-                        origin.setZ(origin.getX() + Double.parseDouble(valor));
-                        origin.valoresActuales();
-                                }
+                            break;
                         }
                         break;
+                        
                     case 2:
                         System.out.println("Has seleccionado la opcion 2");
                         break;
