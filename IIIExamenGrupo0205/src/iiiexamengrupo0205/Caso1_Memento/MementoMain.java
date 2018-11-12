@@ -607,7 +607,7 @@ public class MementoMain {
                         terminado = true;
                         break;
                     default:
-                        System.out.println("Solo números entre 1 y 4");
+                        System.out.println("Solo números entre 1 y 14");
                 }
            
            
