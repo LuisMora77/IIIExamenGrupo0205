@@ -16,7 +16,8 @@ public class Originator {
     private double z;
     Caretaker calcuCaretaker;
     private int contador; // Este contador almacena el numero de savepoints que ha registrado el sistema. Se inicializa en 1.
-
+    private int ultimoSavePoint; // este se utiliza en la funcion deshacerUnPaso
+    
     public void setX(double x) {
         this.x = x;
     }
@@ -65,19 +66,28 @@ public class Originator {
     System.out.println("Generando el savepoint numero " + getContador() + " con el estado actual de la calculadora...");
     calcuCaretaker.addMemento(new CalcuMemento(getX(),getY(),getZ(),getContador()));
     System.out.println("SAVEPOINT " + getContador() + " guardado con exito, valores de x, y, z guardados = " + getX() + ", " + getY() +", " + getZ() + " respectivamente");
+    ultimoSavePoint = contador;
     contador++;
     }
     
     
-    public void deshacerUnPaso(){ //  Revierte el estado de la calculadora al estado anterior
+    public void deshacerUnPaso(){ //  Revierte el estado de la calculadora al estado anterior ARREGLAR
         System.out.println("\nFuncion deshacerUnPaso:");
         System.out.println("Revirtiendo calculadora a estado anterior...");
-        CalcuMemento pasoAnterior = calcuCaretaker.getMemento(contador-3);//-3 ya que en la lista de mementos el indice inicia en 0.
+        if (calcuCaretaker.mementos.size() == 0){
+            System.out.println("No hay SAVEPOINTS guardados aun. No es posible devolverse.");
+        }
+        else if(calcuCaretaker.mementos.size() == 1){
+            System.out.println("Solo hay un SAVEPOINT guardado, por lo que no se puede revertir");
+        }
+        else{
+        CalcuMemento pasoAnterior = calcuCaretaker.getMemento(calcuCaretaker.mementos.size()-2);//-1 ya que en la lista de mementos el indice inicia en 0.
         this.x = pasoAnterior.getX();
         this.y = pasoAnterior.getY();
         this.z = pasoAnterior.getZ();
         System.out.println("Paso revertido con exito, valores actuales de variables x, y, z = " + getX() + ", " + getY() +", " + getZ() + " respectivamente");
-    }
+            }
+        }
     
     
     public void deshacerARequerido(int indice){ // Revierte hasta el calculo que el usuario desee mediante un indice
