@@ -91,7 +91,10 @@ public class MementoMain {
            System.out.println("8. Deshacer un paso");
            System.out.println("9. Deshacer a paso requerido");
            System.out.println("10. Deshacer todo");
-           System.out.println("11. Salir");
+           System.out.println("11. Setear variable x");
+           System.out.println("12. Setear variable y");
+           System.out.println("13. Setear variable z");
+           System.out.println("14. Salir");
            
            try{
            System.out.println("Escriba una de las opciones:   ");
@@ -582,6 +585,24 @@ public class MementoMain {
                         origin.deshacerTodo();
                         break;
                     case 11:
+                        System.out.println("Digite el valor con el que desea setear la variable x:");
+                        int valorX = scan.nextInt();
+                        origin.setX(valorX);
+                        System.out.println("Variable x seteada con exito, " + origin.valoresActuales());
+                        break;
+                    case 12:
+                        System.out.println("Digite el valor con el que desea setear la variable y:");
+                        int valorY = scan.nextInt();
+                        origin.setY(valorY);
+                        System.out.println("Variable y seteada con exito, " + origin.valoresActuales());
+                        break;
+                    case 13:
+                        System.out.println("Digite el valor con el que desea setear la variable z:");
+                        int valorZ = scan.nextInt();
+                        origin.setZ(valorZ);
+                        System.out.println("Variable z seteada con exito, " + origin.valoresActuales());
+                        break;
+                    case 14:
                         System.out.println("Gracias por utilizar la calculadora. Hasta pronto.");
                         terminado = true;
                         break;

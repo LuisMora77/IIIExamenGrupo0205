@@ -81,12 +81,21 @@ public class Originator {
             System.out.println("Solo hay un SAVEPOINT guardado, por lo que no se puede revertir");
         }
         else{
-        CalcuMemento pasoAnterior = calcuCaretaker.getMemento(calcuCaretaker.mementos.size()-2);//-2 ya que en la lista de mementos el indice inicia en 0 y se requiere el valor anterior al ultimo elemento del array.
+            try{
+        CalcuMemento pasoAnterior = calcuCaretaker.getMemento(ultimoSavePoint-2);//-2 ya que en la lista de mementos el indice inicia en 0 y se requiere el valor anterior al ultimo elemento del array.
         this.x = pasoAnterior.getX();
         this.y = pasoAnterior.getY();
         this.z = pasoAnterior.getZ();
         System.out.println("Pasos revertidos con exito " + valoresActuales());
+        ultimoSavePoint--;
             }
+            catch(IndexOutOfBoundsException io){
+                System.out.println("Error. No hay mas SAVEPONITS guardados antes del actual.");
+            
+            }
+                
+            }
+        
         }
     
     
