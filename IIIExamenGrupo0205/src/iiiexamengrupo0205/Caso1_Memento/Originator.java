@@ -51,9 +51,9 @@ public class Originator {
     }
     
     public Originator(Caretaker caretaker) {
-        this.x = 0;
-        this.y = 0;
-        this.z = 0;
+        this.x = 10;
+        this.y = 10;
+        this.z = 10;
         this.contador = 1;
         this.calcuCaretaker = caretaker;
         System.out.println("Calculadora iniciada, valores iniciales de las variables x, y, z = " + getX() + ", " + getY() +", " + getZ() + " respectivamente");
