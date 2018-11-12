@@ -106,7 +106,7 @@ public class Originator {
     this.x = 0;
     this.y = 0;
     this.z = 0;
-    System.out.println("Valores actuales de x, y, z = " + getX() + ", " + getY() +", " + getZ() + " respectivamente" );
+    System.out.println(valoresActuales());
     }
     
     public String valoresActuales(){

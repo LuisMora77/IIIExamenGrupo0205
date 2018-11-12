@@ -23,7 +23,7 @@ public class MementoMain {
         Originator origin = new Originator(care);
         
         // PRUEBAS AUTOMATICAS DE LAS DISTINTAS FUNCIONALIDADES
-        
+        /* 
         origin.setX(origin.getX() + 4); // Prueba de suma a X
         System.out.println("\nSumado 4 a X");
         System.out.println(origin.valoresActuales()); // Se imprimen los valores actuales de las variables
@@ -65,7 +65,7 @@ public class MementoMain {
         origin.deshacerUnPaso(); // Se deshace un paso en la calculadora
         origin.deshacerARequerido(1); // Se regresa al paso requerido por el usuario (recordar que siempre es -1 al numero de SAVEPOINT que se desea)
         origin.deshacerTodo(); // Setea todas las variables en 0
-        
+        */
         // FIN PRUEBAS AUTOMATICAS
 
         
@@ -73,7 +73,7 @@ public class MementoMain {
         // PRUEBAS HECHAS POR EL USUARIO DE MANERA DINAMICA (Simplemente descomentar esta seccion y comentar a anterior para hacer uso
         //del menu a continuacion)
         
-        /*
+        
        Scanner scan = new Scanner(System.in);
        boolean terminado = false;
        int opcion; //Guardaremos la opcion del usuario
@@ -99,7 +99,97 @@ public class MementoMain {
            
            switch (opcion) {
                     case 1:
-                        System.out.println("Has seleccionado la opcion 1");
+                        System.out.println("Ha seleccionado la opcion de sumar");
+                        System.out.println("Introduzca la variable en la que desea guardar el resultado (x,y,z).");
+                        String variable = scan.nextLine();
+                        variable = scan.nextLine();
+                        System.out.println("variable es " + variable);
+                        System.out.println("Digite el numero que desea sumarle a la variable " + variable + " (puede ser otra variable de las descritas anteriormente)");
+                        String valor = scan.nextLine();
+                        System.out.println(valor);
+                        switch (variable){
+                            case "x":
+                                switch(valor){
+                                    case "x":
+                                        System.out.println("entre al valor x del segundo switch");
+                                        origin.setX(origin.getX() + origin.getX());
+                                        System.out.println(origin.valoresActuales());
+                                    break;
+                                    
+                                    case "y":
+                                        System.out.println("entre al valor y del segundo switch");
+                                        origin.setX(origin.getX() + origin.getY());
+                                        System.out.println(origin.valoresActuales());
+                                    break;
+                                    
+                                    case "z":
+                                        System.out.println("entre al valor z del segundo switch");
+                                        origin.setX(origin.getX() + origin.getZ());
+                                        System.out.println(origin.valoresActuales());
+                                    break;
+                                    
+                                    default:
+                                        System.out.println("entre al default del segundo switch");
+                                        origin.setX(origin.getX() + Double.parseDouble(valor));
+                                        System.out.println(origin.valoresActuales());
+                                }
+                        }
+                        
+                        if(variable == "x"){
+                            if (valor == "x"){
+                                System.out.println("entre al valor x");
+                                origin.setX(origin.getX() + origin.getX());
+                                origin.valoresActuales();
+                            }
+                            else if(valor == "y"){
+                            origin.setX(origin.getX() + origin.getY());
+                            origin.valoresActuales();
+                            }
+                            else if (valor == "z"){
+                            origin.setX(origin.getX() + origin.getZ());
+                            origin.valoresActuales();
+                            }
+                            
+                        else{    
+                                System.out.println("entre al else");
+                        origin.setX(origin.getX() + Double.parseDouble(valor));
+                        origin.valoresActuales();
+                                }
+                        }
+                        
+                        else if(variable == "y"){
+                            if (valor == "x"){
+                                origin.setY(origin.getY() + origin.getX());
+                            }
+                            else if(valor == "y"){
+                            origin.setY(origin.getY() + origin.getY());
+                            }
+                            else if (valor == "z"){
+                            origin.setY(origin.getY() + origin.getZ());
+                            }
+                            
+                        else{    
+                        origin.setY(origin.getY() + Double.parseDouble(valor));
+                        origin.valoresActuales();
+                                }
+                        }
+                        
+                        else if(variable == "z"){
+                            if (valor == "x"){
+                                origin.setZ(origin.getZ() + origin.getX());
+                            }
+                            else if(valor == "y"){
+                            origin.setZ(origin.getZ() + origin.getY());
+                            }
+                            else if (valor == "z"){
+                            origin.setZ(origin.getZ() + origin.getZ());
+                            }
+                            
+                        else{    
+                        origin.setZ(origin.getX() + Double.parseDouble(valor));
+                        origin.valoresActuales();
+                                }
+                        }
                         break;
                     case 2:
                         System.out.println("Has seleccionado la opcion 2");
@@ -143,7 +233,7 @@ public class MementoMain {
            }
             
        }
-        */
+        
     }
     
 }
