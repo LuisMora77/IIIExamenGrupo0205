@@ -19,7 +19,13 @@ public class CancionCommand implements Command {
 
     @Override
     public void run() {
+        System.out.println("Ejecutando comandos de cancion" );
         cancion.metodoEncapsulado();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
     }
     
 }

@@ -9,7 +9,7 @@ package iiiexamengrupo0205.Caso2_Command;
  *
  * @author Luis
  */
-public class Cancion implements Reciever{
+public class Cancion implements Receiver{
 
     @Override
     public void metodoEncapsulado() {

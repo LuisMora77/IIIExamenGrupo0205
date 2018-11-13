@@ -19,7 +19,13 @@ public class SMSCommand implements Command {
 
     @Override
     public void run() {
+        System.out.println("Ejecutando comandos de SMS" );
         mensaje.metodoEncapsulado();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
     }
     
 }

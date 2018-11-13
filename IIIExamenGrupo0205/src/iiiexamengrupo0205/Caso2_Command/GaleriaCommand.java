@@ -19,7 +19,13 @@ public class GaleriaCommand implements Command{
     
     @Override
     public void run() {
+        System.out.println("Ejecutando comandos de Galeria" );
         galeria.metodoEncapsulado();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
     }
     
 }

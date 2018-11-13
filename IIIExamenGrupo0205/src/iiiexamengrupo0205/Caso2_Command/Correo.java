@@ -9,7 +9,7 @@ package iiiexamengrupo0205.Caso2_Command;
  *
  * @author Luis
  */
-public class Correo implements Reciever {
+public class Correo implements Receiver {
     @Override
     public void metodoEncapsulado() {
         System.out.println("Enviando Correo...");

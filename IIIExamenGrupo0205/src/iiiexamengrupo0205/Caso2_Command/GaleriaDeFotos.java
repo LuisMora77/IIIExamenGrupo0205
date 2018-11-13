@@ -9,7 +9,7 @@ package iiiexamengrupo0205.Caso2_Command;
  *
  * @author Luis
  */
-public class GaleriaDeFotos implements Reciever {
+public class GaleriaDeFotos implements Receiver {
     @Override
     public void metodoEncapsulado() {
         System.out.println("Abriendo Galeria...");

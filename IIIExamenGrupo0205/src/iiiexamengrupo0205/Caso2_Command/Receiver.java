@@ -9,7 +9,7 @@ package iiiexamengrupo0205.Caso2_Command;
  *
  * @author Luis
  */
-public interface Reciever {
+public interface Receiver {
     
     public void metodoEncapsulado();
 }

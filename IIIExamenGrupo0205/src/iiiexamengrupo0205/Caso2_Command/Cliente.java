@@ -5,6 +5,8 @@
  */
 package iiiexamengrupo0205.Caso2_Command;
 
+
+
 /**
  *
  * @author Luis
@@ -14,8 +16,20 @@ public class Cliente {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         
+        
+        
+        
+        
+        
+        
+        //Se crea un pool de 10 threads como maximo
+        ThreadInvoker inv = new ThreadInvoker(10);
+        
+        for (int i = 0; i<10;i++){ // 10 iteraciones de prueba
+        
+            
         // Se instancian los recievers
         Cancion cancion1 = new Cancion();
         GaleriaDeFotos galeria1 = new GaleriaDeFotos();
@@ -28,8 +42,15 @@ public class Cliente {
         SMSCommand enviarMensaje = new SMSCommand(mensaje1);
         CorreoCommand enviarCorreo = new CorreoCommand(correo1);
         
-        
-        
+        // Se agregan los comandos al pool de hilos
+        inv.agregarComando(reproducirCancion);
+        inv.agregarComando(abrirGaleria);
+        inv.agregarComando(enviarMensaje);
+        inv.agregarComando(enviarCorreo);
+ 
+        }
+        inv.detener();
+        }
     }
     
-}
+

@@ -19,7 +19,13 @@ public class CorreoCommand implements Command {
     
     @Override
     public void run() {
+        System.out.println("Ejecutando comandos de Correo" );
         correo.metodoEncapsulado();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
     }
     
 }

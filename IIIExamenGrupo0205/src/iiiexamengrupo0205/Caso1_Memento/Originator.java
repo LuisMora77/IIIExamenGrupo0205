@@ -73,7 +73,7 @@ public class Originator {
     }
     
     
-    public void deshacerUnPaso(){ //  Revierte el estado de la calculadora al estado anterior 
+    public void deshacerUnPaso(){ //  Revierte el estado de la calculadora al SAVEPOINT anterior 
         System.out.println("\nFuncion deshacerUnPaso:");
         System.out.println("Revirtiendo calculadora a estado anterior...");
         if (calcuCaretaker.mementos.size() == 0){
