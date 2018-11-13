@@ -15,7 +15,21 @@ public class Cliente {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        // Se instancian los recievers
+        Cancion cancion1 = new Cancion();
+        GaleriaDeFotos galeria1 = new GaleriaDeFotos();
+        SMS mensaje1 = new SMS();
+        Correo correo1 = new Correo();
+        
+        //Se instancian los commands con su respectivo reciever
+        CancionCommand reproducirCancion = new CancionCommand(cancion1);
+        GaleriaCommand abrirGaleria = new GaleriaCommand(galeria1);
+        SMSCommand enviarMensaje = new SMSCommand(mensaje1);
+        CorreoCommand enviarCorreo = new CorreoCommand(correo1);
+        
+        
+        
     }
     
 }
