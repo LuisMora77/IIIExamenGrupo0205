@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package iiiexamengrupo0205.Caso1_Memento;
+package iiiexamengrupo0205.Caso1Memento;
 
+import iiiexamengrupo0205.Caso1Memento.Caretaker;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
