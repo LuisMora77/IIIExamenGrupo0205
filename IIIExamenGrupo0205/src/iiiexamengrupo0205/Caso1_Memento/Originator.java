@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package iiiexamengrupo0205.Caso1Memento;
+package iiiexamengrupo0205.Caso1_Memento;
 
-import iiiexamengrupo0205.Caso1Memento.Caretaker;
+import iiiexamengrupo0205.Caso1_Memento.Caretaker;
 
 /**
  *
@@ -73,7 +73,7 @@ public class Originator {
     }
     
     
-    public void deshacerUnPaso(){ //  Revierte el estado de la calculadora al estado anterior ARREGLAR
+    public void deshacerUnPaso(){ //  Revierte el estado de la calculadora al estado anterior 
         System.out.println("\nFuncion deshacerUnPaso:");
         System.out.println("Revirtiendo calculadora a estado anterior...");
         if (calcuCaretaker.mementos.size() == 0){
@@ -91,7 +91,7 @@ public class Originator {
         System.out.println("Pasos revertidos con exito " + valoresActuales());
         ultimoSavePoint--;
             }
-            catch(IndexOutOfBoundsException io){
+            catch(IndexOutOfBoundsException ioobe){
                 System.out.println("Error. No hay mas SAVEPONITS guardados antes del actual.");
             
             }
